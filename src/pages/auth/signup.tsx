@@ -1,13 +1,16 @@
 
 import React from 'react';
-import SignUpForm from '../../components/SignUpForm';
-
+import '../../styles/signup.scss';
+import SignInForm from '../../components/SignupForm';
 const SignUpPage: React.FC = () => {
+
     return (
-        <>
-            <h1>Sign Up</h1>
-            <SignUpForm />
-        </>
+        <div className='container'>
+
+            <section id="entry-page">
+                <SignInForm />
+            </section>
+        </div>
     );
 };
 

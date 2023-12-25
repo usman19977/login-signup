@@ -1,17 +1,16 @@
 
 import React from 'react';
-import SignInForm from '../../components/SignInForm';
-
+import '../../styles/login.scss';
+import LoginForm from '../../components/LoginForm';
 const SignInPage: React.FC = () => {
+
     return (
         <div className='container'>
-            <div className="header">
-                <div className="text">Sign In</div>
-                <div className="underline"></div>
-            </div>
-            <div className="inputs">
-                <SignInForm />
-            </div>
+
+            <section id="entry-page">
+                <LoginForm />
+            </section>
+
         </div>
     );
 };
