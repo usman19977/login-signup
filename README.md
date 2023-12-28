@@ -1,3 +1,33 @@
+# Folder Structure
+
+/project-root
+├── /public
+|   ├── favicon.ico
+|   ├── index.html
+|   ├── manifest.ico
+|   └── robots.txt
+| 
+├── /src
+|   ├── /api ( Contain's API Configuration )
+|   ├── /assets ( Contain's Assets )
+|   ├── /components ( Contain's Component's Of UI )
+|   |    | 
+|   |    └── /layouts ( Contain's Project's Layouts Auth/ UnAuth Layouts )
+|   |    
+|   ├── /constants ( Contain's Constants / Endpoints , Routes etc )
+|   ├── /interfaces ( Contain's Interfaces used throughout the project )
+|   ├── /pages ( Contain's modules )
+|   ├── /services ( Contain's modules Services )
+|   ├── /store ( Contain's redux toolkit stuff )
+|   ├── /styles ( Contain's styles )
+|   ├── /utils ( Contain's utility files if any )
+├── /public
+└── .gitattributes
+└── .gitignore
+└── package-lock.json
+└── package.json
+└── README.md
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
