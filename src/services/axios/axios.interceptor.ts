@@ -16,12 +16,12 @@ protectedInstance.interceptors.request.use(
       const refreshToken = TokenService.getRefreshToken();
 
       if (refreshToken) {
-        config.headers['Authorization'] = 'Bearer ' + refreshToken; // for Spring Boot back-end
+        config.headers['Authorization'] = 'Bearer ' + refreshToken;
       }
     } else {
       const token = TokenService.getAuthenticatedToken();
       if (token) {
-        config.headers['Authorization'] = 'Bearer ' + token; // for Spring Boot back-end
+        config.headers['Authorization'] = 'Bearer ' + token;
       }
     }
 

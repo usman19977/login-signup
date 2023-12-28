@@ -1,5 +1,5 @@
 // frontend/slices/authSlice.ts
-import { AuthState } from '../interfaces/AuthInterface';
+import { AuthState } from '../../interfaces/AuthInterface';
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 
@@ -13,11 +13,7 @@ const authSlice = createSlice({
     name: 'auth',
     initialState,
     reducers: {
-        login: (state, action: PayloadAction<any>) => {
-            state.data = action.payload;
-            state.isAuthenticated = true;
-        },
-        getUser: (state, action: PayloadAction<any>) => {
+        setDetails: (state, action: PayloadAction<any>) => {
             state.data = action.payload;
             state.isAuthenticated = true;
         },
@@ -28,5 +24,5 @@ const authSlice = createSlice({
     },
 });
 
-export const { login, logout, getUser } = authSlice.actions;
+export const { setDetails, logout } = authSlice.actions;
 export default authSlice.reducer;

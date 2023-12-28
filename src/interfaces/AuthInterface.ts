@@ -1,12 +1,9 @@
 export interface UserDataInterface {
     id?: string;
-    email: string;
+    username?: string;
+    email?: string;
     name: string;
     password: string;
-}
-export interface SignOutMetaDataInterface {
-    id: string;
-    access_token: string;
 }
 
 export interface AuthState {
@@ -17,4 +14,14 @@ export interface AuthState {
 export interface RefreshTokenResponseInferFace {
     access_token: string;
     refresh_token: string;
+}
+export interface LoginCredentials {
+    username: string;
+    password: string;
+}
+
+export interface RegisterCredentials {
+    name: string;
+    email: string;
+    password: string;
 }

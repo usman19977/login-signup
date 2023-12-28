@@ -1,11 +1,11 @@
 import { AxiosResponse } from "axios";
-import { handleApiError, protectedInstance as api } from './Axios';
+import { handleApiError, protectedInstance as api, normalInstance } from './Axios';
 import { LOGIN, SIGNUP, LOGOUT, GET_USER_DETAIL, REFRESH_TOKEN } from "../constants/endpoints";
-import { SignOutMetaDataInterface, UserDataInterface } from "../interfaces/AuthInterface";
+import { UserDataInterface } from "../interfaces/AuthInterface";
 
 export const signUp = async (userData: UserDataInterface) => {
     try {
-        const response = await api.post(SIGNUP, userData);
+        const response = await normalInstance.post(SIGNUP, userData);
         return response;
     } catch (error: any) {
         handleApiError(error);
@@ -15,7 +15,7 @@ export const signUp = async (userData: UserDataInterface) => {
 
 export const logIn = async (credentials: any): Promise<AxiosResponse> => {
     try {
-        const response = await api.post(LOGIN, credentials);
+        const response = await normalInstance.post(LOGIN, credentials);
         return response;
     } catch (error: any) {
         handleApiError(error);
@@ -23,9 +23,9 @@ export const logIn = async (credentials: any): Promise<AxiosResponse> => {
     }
 };
 
-export const logOut = async (metaData: SignOutMetaDataInterface): Promise<AxiosResponse> => {
+export const logOut = async (): Promise<AxiosResponse> => {
     try {
-        const response = await api.post(LOGOUT, metaData);
+        const response = await api.post(LOGOUT);
         return response;
     } catch (error: any) {
         handleApiError(error);
@@ -33,9 +33,9 @@ export const logOut = async (metaData: SignOutMetaDataInterface): Promise<AxiosR
     }
 };
 
-export const getUser = async (id: string): Promise<AxiosResponse> => {
+export const getUser = async (): Promise<AxiosResponse> => {
     try {
-        const response = await api.get(GET_USER_DETAIL(id));
+        const response = await api.get(GET_USER_DETAIL);
         return response;
     } catch (error: any) {
         handleApiError(error);

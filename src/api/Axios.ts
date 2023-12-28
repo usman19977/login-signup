@@ -27,6 +27,8 @@ const handleApiError = (error: AxiosError<unknown, any>) => {
             // The request was made and the server responded with a status code
             console.error(logTitle, response.status);
             console.error(logTitle, response.data);
+            //We can basically do state management here for now just to save time alerting the error 
+            alert(JSON.stringify(response.data));
         } else {
             // The request was made but no response was received
             console.error(logTitle, 'No response received from the server');
